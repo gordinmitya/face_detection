@@ -12,6 +12,13 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+
+        externalNativeBuild {
+            cmake {
+                arguments "-DANDROID_ARM_NEON=TRUE", "-DANDROID_PLATFORM=android-21", "-DANDROID_STL=c++_shared"
+                abiFilters "arm64-v8a", "armeabi-v7a"
+            }
+        }
     }
 
     buildTypes {
@@ -21,6 +28,12 @@ android {
         }
     }
 
+
+    externalNativeBuild {
+        cmake {
+            path 'src/main/CMakeLists.txt'
+        }
+    }
 }
 
 dependencies {
