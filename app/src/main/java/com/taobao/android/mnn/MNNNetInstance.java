@@ -144,6 +144,10 @@ public class MNNNetInstance {
 
         private long mSessionInstance = 0;
 
+        public long getNetNativePtr() {
+            return mNetInstance;
+        }
+
         public long getSessionNativePtr() {
             return mSessionInstance;
         }
