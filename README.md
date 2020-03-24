@@ -18,3 +18,9 @@ Execution time ~20ms for image 320x320 on Snapdragon 855 (including pre and post
 If you're going to obfuscate with Proguard don't forget to [include these rules](./app/proguard-rules.pro) to keep Face class. It's used from JNI.
 
 There're alternatives like [TFLite with Blazeface](https://github.com/google/mediapipe).
+
+## TODO
+
+- [ ] show bounding box
+- [ ] capture stream from camera
+- [ ] GooglePlay
