@@ -19,3 +19,7 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep class ru.gordinmitya.Face { *; }
+-keep class ru.gordinmitya.Face$Rect { *; }
+-keep class ru.gordinmitya.Face$Point { *; }
