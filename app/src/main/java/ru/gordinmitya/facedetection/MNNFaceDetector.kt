@@ -10,6 +10,7 @@ import com.taobao.android.mnn.MNNNetInstance
 class MNNFaceDetector(
     val context: Context,
     val fileName: String,
+    val size: Int = 320,
     val forwardType: MNNForwardType = MNNForwardType.FORWARD_AUTO
 ) {
 
@@ -27,7 +28,10 @@ class MNNFaceDetector(
         }
         session = net!!.createSession(config)
         inputTensor = session.getInput(null)
+        inputTensor.reshape(intArrayOf(1, 3, size, size))
+        session.reshape()
         inputSize = inputTensor.dimensions
+        require(inputSize[2] == inputSize[3] && inputSize[3] == size)
     }
 
     fun predict(input: Bitmap): Array<Face> {

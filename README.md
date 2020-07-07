@@ -2,16 +2,26 @@
 
 Used framework – [MNN by Alibaba](https://github.com/alibaba/MNN);
 
-Model was taken from [biubug6/Face-Detector-1MB-with-landmark (RFB)](github.com/biubug6/Face-Detector-1MB-with-landmark);
+Model was taken from [biubug6/Face-Detector-1MB-with-landmark (RFB)](https://github.com/biubug6/Face-Detector-1MB-with-landmark);
 
 Then converted with [built docker image MNNConvert](https://github.com/gordinmitya/docker_that_framework/tree/master/mnn);
+
+```bash
+cd ~/Face-Detector-1MB-with-landmark
+python3 convert_to_onnx.py
+python3 -m onnxsim faceDetector.onnx sim.onnx
+
+cd ~/mnn/build
+./MNNConvert --bizCode MNN --MNNModel face.mnn -f ONNX --modelFile ~/Face-Detector-1MB-with-landmark/sim.onnx
+cp ~/face.mnn ~/face_detection/app/src/main/assets/face.mnn
+```
 
 Face bounding box + landmarks: eyes, nose, mouth.
 
 ## Example
 ![example](./img/screenshot.jpg)
 
-Execution time ~20ms for image 320x320 on Snapdragon 855 (including pre and postprocessing).
+Timings on Snapdragon 855 (including pre and postprocessing).
 
 ## Notes
 

@@ -11,11 +11,19 @@
         android:layout_height="match_parent"
         android:scaleType="fitCenter" />
 
-    <TextView
-        android:id="@+id/text_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|bottom"
-        android:textSize="18sp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:background="#7000"
+            android:textColor="#fff"
+            android:id="@+id/text_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:textSize="18sp"
+            tools:text="${size}x${size} $count runs\navg = 55ms\nno first = 55ms\nmin = ${timing.min()} max = ${timing.max()}" />
+    </ScrollView>
 
 </FrameLayout>
