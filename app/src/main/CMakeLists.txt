@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.4.1)
 
-set(lib_DIR ${CMAKE_SOURCE_DIR}/jniLibs)
+set(lib_DIR ${CMAKE_SOURCE_DIR}/libs)
 include_directories(${CMAKE_SOURCE_DIR}/cpp/includes)
 
 set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fopenmp")
