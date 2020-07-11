@@ -80,6 +80,13 @@ class MainActivity : AppCompatActivity() {
         val radius = 2f
         val paint = Paint()
 
+        paint.style = Paint.Style.STROKE
+        paint.color = Color.WHITE
+        face.bBox.let { box ->
+            canvas.drawRect(box.x1 * w, box.y1 * h, box.x2 * w, box.y2 * h, paint)
+        }
+
+        paint.style = Paint.Style.FILL
         paint.color = Color.YELLOW
         canvas.drawCircle(face.leftEye.x * w, face.leftEye.y * h, radius, paint)
         paint.color = Color.BLUE
